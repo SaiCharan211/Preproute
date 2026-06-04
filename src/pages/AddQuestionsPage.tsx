@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
 import api from "../api/axios";
-import type { Question, Test, Topic, SubTopic } from "../types";
+import type { Test, Topic, SubTopic } from "../types";
 
 const EMPTY_Q = {
     type: "mcq",
@@ -238,7 +238,7 @@ export default function AddQuestionsPage() {
                 <div className="mb-5">
                     <p className="text-sm font-medium text-gray-700 mb-2">Type the options below</p>
                     <div className="space-y-2">
-                        {(["option1", "option2", "option3", "option4"] as const).map((opt, i) => (
+                        {(["option1", "option2", "option3", "option4"] as const).map((opt) => (
                             <div key={opt} className="flex items-center gap-3">
                                 <input
                                     type="radio"
